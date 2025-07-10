@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import ThankYou from "@/pages/ThankYou";
-import Admin from "@/pages/Admin";
-// import { AdminProvider } from "@/context/AdminContext";
+// import Admin from "@/pages/Admin";
+import { AdminProvider } from "@/context/AdminContext";
 
 // Create the QueryClient outside of the component
 const queryClient = new QueryClient();
@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <AdminProvider> */}
+      <AdminProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -24,13 +24,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/obrigado" element={<ThankYou />} />
-              <Route path="/admin" element={<Admin />} />
+              {/* <Route path="/admin" element={<Admin />} /> */}
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
-      {/* </AdminProvider> */}
+      </AdminProvider>
     </QueryClientProvider>
   );
 }

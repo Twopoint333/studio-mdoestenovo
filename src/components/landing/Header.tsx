@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
           <nav className="hidden md:flex items-center gap-8">
             <a href="#beneficios" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Benefícios</a>
             <a href="#como-funciona" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Como Funciona</a>
-            {/* <a href="#depoimentos" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Depoimentos</a> */}
+            <a href="#depoimentos" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Depoimentos</a>
             <Button
               asChild
               className={`px-6 transition-colors duration-300 ${
@@ -69,9 +69,9 @@ export const Header: React.FC<HeaderProps> = ({
             <a href="#como-funciona" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
               Como Funciona
             </a>
-            {/* <a href="#depoimentos" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
+            <a href="#depoimentos" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
               Depoimentos
-            </a> */}
+            </a>
             <Button asChild className="mt-4 bg-primary hover:bg-primary/90">
               <a href="#cta" onClick={closeMenu}>
                 Seja Parceiro
