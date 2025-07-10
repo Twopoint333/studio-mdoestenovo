@@ -2,12 +2,12 @@ import { Hero } from "@/components/landing/Hero";
 import { Header } from "@/components/landing/Header";
 import { Benefits } from "@/components/landing/Benefits";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { MarketingCampaigns } from "@/components/landing/MarketingCampaigns";
+// import { MarketingCampaigns } from "@/components/landing/MarketingCampaigns";
 import { Advantages } from "@/components/landing/Advantages";
 import { BusinessTypes } from "@/components/landing/BusinessTypes";
 import { DeliveryOptions } from "@/components/landing/DeliveryOptions";
-import { TeamSection } from "@/components/landing/TeamSection";
-import { Testimonials } from "@/components/landing/Testimonials";
+// import { TeamSection } from "@/components/landing/TeamSection";
+// import { Testimonials } from "@/components/landing/Testimonials";
 import { Pricing } from "@/components/landing/Pricing";
 import { CallToAction } from "@/components/landing/CallToAction";
 import { Footer } from "@/components/landing/Footer";
@@ -44,12 +44,12 @@ const Index = () => {
         <Hero />
         <Benefits />
         <HowItWorks />
-        <MarketingCampaigns />
+        {/* <MarketingCampaigns /> */}
         <Advantages />
         <BusinessTypes />
         <DeliveryOptions />
-        <TeamSection />
-        <Testimonials />
+        {/* <TeamSection /> */}
+        {/* <Testimonials /> */}
         <Pricing />
         <CallToAction />
       </main>
