@@ -8,7 +8,7 @@ import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import ThankYou from "@/pages/ThankYou";
 // import Admin from "@/pages/Admin";
-import { AdminProvider } from "@/context/AdminContext";
+// import { AdminProvider } from "@/context/AdminContext";
 
 // Create the QueryClient outside of the component
 const queryClient = new QueryClient();
@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AdminProvider>
+      {/* <AdminProvider> */}
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -30,7 +30,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
-      </AdminProvider>
+      {/* </AdminProvider> */}
     </QueryClientProvider>
   );
 }
