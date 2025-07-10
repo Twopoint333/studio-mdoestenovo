@@ -46,9 +46,9 @@ export const Footer = () => {
             <a href="#como-funciona" className="text-gray-300 hover:text-white transition-colors">
               Como Funciona
             </a>
-            <a href="#depoimentos" className="text-gray-300 hover:text-white transition-colors">
+            {/* <a href="#depoimentos" className="text-gray-300 hover:text-white transition-colors">
               Depoimentos
-            </a>
+            </a> */}
             <a href="#cta" className="text-gray-300 hover:text-white transition-colors">
               Contato
             </a>
