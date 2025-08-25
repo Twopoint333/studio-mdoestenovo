@@ -27,6 +27,8 @@ export const Header: React.FC<HeaderProps> = ({
     closeMenu();
   };
 
+  const navLinkClass = isScrolled ? "text-[#A21C1C]" : "text-white";
+
   return (
     <>
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-out ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'} ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -37,16 +39,16 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#beneficios" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Benefícios</a>
-            <a href="#como-funciona" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Como Funciona</a>
-            <a href="#depoimentos" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Depoimentos</a>
+            <a href="#beneficios" className={`${navLinkClass} font-medium hover:text-opacity-80 transition-colors`}>Benefícios</a>
+            <a href="#como-funciona" className={`${navLinkClass} font-medium hover:text-opacity-80 transition-colors`}>Como Funciona</a>
+            <a href="#depoimentos" className={`${navLinkClass} font-medium hover:text-opacity-80 transition-colors`}>Depoimentos</a>
             <Button className="bg-[#A21C1C] hover:bg-[#911616] px-6" onClick={handlePartnerClick}>
               Seja Parceiro
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" onClick={() => setMenuOpen(true)} size="icon" className="md:hidden text-[#A21C1C]">
+          <Button variant="ghost" onClick={() => setMenuOpen(true)} size="icon" className={`md:hidden ${navLinkClass}`}>
             <Menu className="h-6 w-6" />
           </Button>
         </div>
