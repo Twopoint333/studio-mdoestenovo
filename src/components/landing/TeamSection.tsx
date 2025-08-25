@@ -3,7 +3,6 @@ import React from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight } from 'lucide-react';
-import { useAdmin } from '@/context/AdminContext';
 
 export const TeamSection = () => {
   const {
@@ -13,8 +12,11 @@ export const TeamSection = () => {
     threshold: 0.1
   });
   
-  const { teamMembers } = useAdmin();
-  const teamImages = teamMembers.map(member => member.imageUrl);
+  const teamImages = [
+    '/suporte1.png',
+    '/suporte2.png',
+    '/suporte3.png',
+  ];
   
   if (teamImages.length === 0) {
     return null;
@@ -42,7 +44,7 @@ export const TeamSection = () => {
               <CarouselContent>
                 {teamImages.map((image, index) => (
                   <CarouselItem key={index} className="basis-full">
-                    <img src={image} alt={`Equipe Mais Delivery ${index + 1}`} className="rounded-lg shadow-md h-70 md:h-80 w-full object-cover hover:scale-105 transition-transform duration-300" />
+                    <img src={image} alt={`Equipe Mais Delivery ${index + 1}`} className="rounded-lg shadow-md h-70 md:h-80 w-full object-cover hover:scale-105 transition-transform duration-300" data-ai-hint="support team call center" />
                   </CarouselItem>
                 ))}
               </CarouselContent>
