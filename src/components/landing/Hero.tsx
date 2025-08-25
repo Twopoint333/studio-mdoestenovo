@@ -23,7 +23,7 @@ export const Hero = () => {
       id="hero" 
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-16 md:py-24 bg-cover bg-center" 
       style={{
-        backgroundImage: "url('/capa.png')",
+        backgroundImage: "url(/capa.png)",
         backgroundPosition: "center center"
       }}
       data-ai-hint="delivery motorcycle"
