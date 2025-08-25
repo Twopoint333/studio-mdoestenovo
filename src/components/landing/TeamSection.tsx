@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 export const TeamSection = () => {
   const {
@@ -11,6 +12,10 @@ export const TeamSection = () => {
   } = useInView({
     threshold: 0.1
   });
+  
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
   
   const teamImages = [
     '/suporte 1.jpeg',
@@ -37,10 +42,16 @@ export const TeamSection = () => {
           </div>
           
           <div className="relative shadow-lg rounded-lg overflow-hidden">
-            <Carousel opts={{
-              align: "start",
-              loop: true
-            }} className="w-full">
+            <Carousel 
+              opts={{
+                align: "start",
+                loop: true
+              }} 
+              className="w-full"
+              plugins={[plugin.current]}
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+            >
               <CarouselContent>
                 {teamImages.map((image, index) => (
                   <CarouselItem key={index} className="basis-full">

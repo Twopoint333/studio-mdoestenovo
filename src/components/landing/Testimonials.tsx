@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useInView } from '@/hooks/useInView';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from 'lucide-react';
 import { useAdmin } from '@/context/AdminContext';
+import Autoplay from "embla-carousel-autoplay";
 
 export const Testimonials = () => {
   const {
@@ -13,6 +14,10 @@ export const Testimonials = () => {
   } = useInView({
     threshold: 0.1
   });
+  
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
   
   const { testimonials } = useAdmin();
   
@@ -28,10 +33,16 @@ export const Testimonials = () => {
         </h2>
         
         <div ref={ref} className="relative">
-          <Carousel opts={{
-            align: "start",
-            loop: true
-          }} className="w-full max-w-5xl mx-auto">
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true
+            }} 
+            className="w-full max-w-5xl mx-auto"
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2 pl-4">

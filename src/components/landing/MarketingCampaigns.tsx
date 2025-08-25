@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { ArrowRight } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
 
 export const MarketingCampaigns = () => {
   const {
@@ -11,6 +11,10 @@ export const MarketingCampaigns = () => {
   } = useInView({
     threshold: 0.1
   });
+  
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
   
   const campaigns = [
     '/arte1.jpeg',
@@ -39,10 +43,16 @@ export const MarketingCampaigns = () => {
         </p>
         
         <div ref={ref} className={`transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <Carousel className="w-full mx-auto" opts={{
-            align: "center",
-            loop: true
-          }}>
+          <Carousel 
+            className="w-full mx-auto" 
+            opts={{
+              align: "center",
+              loop: true
+            }}
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
             <CarouselContent>
               {campaigns.map((campaign, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
