@@ -13,9 +13,9 @@ export const TeamSection = () => {
   });
   
   const teamImages = [
-    '/suporte1.png',
-    '/suporte2.png',
-    '/suporte3.png',
+    '/suporte1.jpg',
+    '/suporte2.jpg',
+    '/suporte3.jpg',
   ];
   
   if (teamImages.length === 0) {
