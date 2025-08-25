@@ -38,35 +38,25 @@ export const MarketingCampaigns = () => {
           Impulsione sua marca com ações estratégicas de marketing cooperado para conquistar mais clientes!
         </p>
         
-        <div ref={ref} className={`transition-all duration-500 shadow-lg rounded-lg overflow-hidden ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div ref={ref} className={`transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Carousel className="w-full mx-auto" opts={{
             align: "center",
             loop: true
           }}>
             <CarouselContent>
               {campaigns.map((campaign, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2 xl:basis-1/3">
-                  <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-1">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <img 
                       src={campaign} 
                       alt={`Campanha de Marketing ${index + 1}`} 
-                      className="w-full h-auto object-contain max-h-[500px] hover:scale-105 transition-transform duration-300" 
+                      className="w-full h-full object-cover aspect-[3/4] hover:scale-105 transition-transform duration-300" 
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
-        
-        <div className="flex justify-center w-full mt-6">
-          <div className="flex flex-col items-center gap-1">
-            <div className="flex items-center gap-2 text-[#A21C1C] text-sm">
-              <span>Arraste para ver mais</span>
-              <ArrowRight className="w-4 h-4 animate-bounce animate-infinite" />
-            </div>
-            <div className="h-0.5 w-24 bg-gradient-to-r from-transparent via-[#A21C1C] to-transparent animate-pulse"></div>
-          </div>
         </div>
       </div>
     </section>
