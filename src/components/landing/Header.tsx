@@ -15,9 +15,16 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobile = useMedia('(max-width: 768px)');
+  // Fixed ClickUp form URL
+  const clickUpFormUrl = 'https://forms.clickup.com/9007116077/f/8cdvbtd-1933/04EZ2JLNT1SGLXPAF2?Nome%20da%20tarefa=Estabelecimento%20Interessado';
   
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+  
+  const handlePartnerClick = () => {
+    window.open(clickUpFormUrl, '_blank');
+    closeMenu();
   };
 
   return (
@@ -30,23 +37,16 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#beneficios" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Benefícios</a>
-            <a href="#como-funciona" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Como Funciona</a>
-            {/* <a href="#depoimentos" className={`font-medium transition-colors hover:opacity-80 ${isScrolled ? 'text-primary' : 'text-white'}`}>Depoimentos</a> */}
-            <Button
-              asChild
-              className={`px-6 transition-colors duration-300 ${
-                isScrolled
-                  ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                  : 'bg-white text-primary hover:bg-white/90'
-              }`}
-            >
-              <a href="#cta">Seja Parceiro</a>
+            <a href="#beneficios" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Benefícios</a>
+            <a href="#como-funciona" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Como Funciona</a>
+            <a href="#depoimentos" className="text-[#A21C1C] font-medium hover:text-opacity-80 transition-colors">Depoimentos</a>
+            <Button className="bg-[#A21C1C] hover:bg-[#911616] px-6" onClick={handlePartnerClick}>
+              Seja Parceiro
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" onClick={() => setMenuOpen(true)} size="icon" className={`md:hidden ${isScrolled ? 'text-primary' : 'text-white'}`}>
+          <Button variant="ghost" onClick={() => setMenuOpen(true)} size="icon" className="md:hidden text-[#A21C1C]">
             <Menu className="h-6 w-6" />
           </Button>
         </div>
@@ -57,25 +57,23 @@ export const Header: React.FC<HeaderProps> = ({
         <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-xl transform transition-transform duration-300 ease-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={e => e.stopPropagation()}>
           <div className="flex justify-between items-center p-4 border-b">
             <img src="/lovable-uploads/476b844f-a75b-468e-ba6a-1e7345b83181.png" alt="Mais Delivery Logo" className="h-8" />
-            <Button variant="ghost" size="icon" onClick={closeMenu} className="text-primary">
+            <Button variant="ghost" size="icon" onClick={closeMenu} className="text-[#A21C1C]">
               <X className="h-6 w-6" />
             </Button>
           </div>
           
           <nav className="flex flex-col p-4">
-            <a href="#beneficios" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
+            <a href="#beneficios" className="py-3 text-[#A21C1C] font-medium border-b border-gray-100" onClick={closeMenu}>
               Benefícios
             </a>
-            <a href="#como-funciona" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
+            <a href="#como-funciona" className="py-3 text-[#A21C1C] font-medium border-b border-gray-100" onClick={closeMenu}>
               Como Funciona
             </a>
-            {/* <a href="#depoimentos" className="py-3 text-primary font-medium border-b border-gray-100" onClick={closeMenu}>
+            <a href="#depoimentos" className="py-3 text-[#A21C1C] font-medium border-b border-gray-100" onClick={closeMenu}>
               Depoimentos
-            </a> */}
-            <Button asChild className="mt-4 bg-primary hover:bg-primary/90">
-              <a href="#cta" onClick={closeMenu}>
-                Seja Parceiro
-              </a>
+            </a>
+            <Button className="mt-4 bg-[#A21C1C] hover:bg-[#911616]" onClick={handlePartnerClick}>
+              Seja Parceiro
             </Button>
           </nav>
         </div>

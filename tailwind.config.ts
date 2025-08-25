@@ -45,7 +45,6 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
-        'accent-cta': 'hsl(var(--accent-cta))',
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -87,10 +86,6 @@ export default {
 						height: '0'
 					}
 				},
-        'border-spin': {
-          'from': { transform: 'rotate(0deg)' },
-          'to': { transform: 'rotate(360deg)' },
-        },
 				'fade-in': {
 					'0%': {
 						opacity: '0',
@@ -122,15 +117,15 @@ export default {
 					}
 				},
 				'pulse-cta': {
-          '0%, 100%': {
-            transform: 'scale(1)',
-            boxShadow: '0 0 0 0 hsla(var(--accent-cta), 0.7)'
-          },
-          '50%': {
-            transform: 'scale(1.015)',
-            boxShadow: '0 0 0 10px hsla(var(--accent-cta), 0)'
-          }
-        },
+					'0%, 100%': {
+						transform: 'scale(1)',
+						boxShadow: '0 0 0 0 rgba(200, 16, 46, 0.7)'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						boxShadow: '0 0 0 10px rgba(200, 16, 46, 0)'
+					}
+				},
 				'rotate-y': {
 					'0%': {
 						transform: 'rotateY(90deg)',
@@ -140,30 +135,19 @@ export default {
 						transform: 'rotateY(0)',
 						opacity: '1'
 					}
-				},
-        'bounce-horizontal': {
-          '0%, 100%': {
-            transform: 'translateX(-25%)',
-            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
-          },
-          '50%': {
-            transform: 'translateX(0)',
-            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
-          },
-        },
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'border-spin': 'border-spin 4s linear infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
-				'pulse-cta': 'pulse-cta 4s infinite',
-				'rotate-y': 'rotate-y 0.5s ease-out forwards',
-        'bounce-horizontal': 'bounce-horizontal 1s infinite',
+				'pulse-cta': 'pulse-cta 2s infinite',
+				'rotate-y': 'rotate-y 0.5s ease-out forwards'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
