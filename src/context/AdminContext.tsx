@@ -53,10 +53,10 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const saved = localStorage.getItem('admin-marketing-campaigns');
     if (saved) return JSON.parse(saved);
     return [
-      { id: '1', imageUrl: 'https://i.imgur.com/Z70ULv8.jpeg' },
-      { id: '2', imageUrl: 'https://i.imgur.com/8lTN5pa.jpeg' },
-      { id: '3', imageUrl: 'https://i.imgur.com/7ShMluZ.jpeg' },
-      { id: '4', imageUrl: 'https://i.imgur.com/fNA8WBM.jpeg' }
+      { id: '1', imageUrl: 'https://placehold.co/500x500.png' },
+      { id: '2', imageUrl: 'https://placehold.co/500x500.png' },
+      { id: '3', imageUrl: 'https://placehold.co/500x500.png' },
+      { id: '4', imageUrl: 'https://placehold.co/500x500.png' }
     ];
   });
   
@@ -64,8 +64,8 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const saved = localStorage.getItem('admin-team-members');
     if (saved) return JSON.parse(saved);
     return [
-      { id: '1', imageUrl: 'https://i.imgur.com/eKGLi9U.jpeg' },
-      { id: '2', imageUrl: 'https://i.imgur.com/oILzGmK.jpeg' }
+      { id: '1', imageUrl: 'https://placehold.co/600x400.png' },
+      { id: '2', imageUrl: 'https://placehold.co/600x400.png' }
     ];
   });
   
