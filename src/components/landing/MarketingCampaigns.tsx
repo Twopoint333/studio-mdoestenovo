@@ -50,7 +50,7 @@ export const MarketingCampaigns = () => {
                     <img 
                       src={campaign} 
                       alt={`Campanha de Marketing ${index + 1}`} 
-                      className="w-full h-full object-cover aspect-[3/4] hover:scale-105 transition-transform duration-300" 
+                      className="w-full h-full object-contain aspect-[3/4] hover:scale-105 transition-transform duration-300" 
                     />
                   </div>
                 </CarouselItem>
