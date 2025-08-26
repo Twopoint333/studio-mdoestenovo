@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useAdmin } from '@/context/AdminContext';
-import { Edit, Trash2, Video } from 'lucide-react';
+import { Edit, Trash2, Video as VideoIcon } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -149,7 +149,7 @@ const VideoLinks = () => {
               <Card key={video.id}>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Video className="h-5 w-5 text-[#A21C1C]" />
+                    <VideoIcon className="h-5 w-5 text-[#A21C1C]" />
                     {video.title}
                   </CardTitle>
                 </CardHeader>

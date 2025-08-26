@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { AdminLayout } from '@/components/admin/AdminLayout';
 import { AdminGuard, useAdminGuard } from '@/components/admin/AdminGuard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Image, Users, MessageSquare, UserPlus } from 'lucide-react';
+import { Image, Users, MessageSquare, UserPlus, Video } from 'lucide-react';
 import { useAdmin } from '@/context/AdminContext';
 import { Link } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -16,7 +16,8 @@ const AdminDashboard = () => {
   const { 
     marketingCampaigns, 
     teamMembers, 
-    testimonials
+    testimonials,
+    videos
   } = useAdmin();
   
   const { setUnsavedChanges } = useAdminGuard();
@@ -158,6 +159,13 @@ const AdminDashboard = () => {
       icon: <MessageSquare className="w-10 h-10 text-[#A21C1C]" />,
       path: '/admin/testimonials',
       count: testimonials.length
+    },
+    {
+      title: 'Vídeos',
+      description: `${videos.length} vídeos cadastrados`,
+      icon: <Video className="w-10 h-10 text-[#A21C1C]" />,
+      path: '/admin/videos',
+      count: videos.length
     }
   ];
 
@@ -169,7 +177,7 @@ const AdminDashboard = () => {
           <p className="text-gray-500">Bem-vindo ao painel administrativo do Mais Delivery</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {dashboardItems.map((item, index) => (
             <Link to={item.path} key={index} className="transition-transform hover:scale-105">
               <Card>
