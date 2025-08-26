@@ -55,7 +55,7 @@ export const TeamSection = () => {
               <CarouselContent>
                 {teamImages.map((image, index) => (
                   <CarouselItem key={index} className="basis-full">
-                    <img src={image} alt={`Equipe Mais Delivery ${index + 1}`} className="rounded-lg shadow-md h-70 md:h-80 w-full object-cover hover:scale-105 transition-transform duration-300" data-ai-hint="support team call center" />
+                    <img src={image} alt={`Equipe Mais Delivery ${index + 1}`} className="rounded-lg shadow-md h-70 md:h-80 w-full object-cover hover:scale-105 transition-transform duration-300" data-ai-hint="support team call center" loading="lazy" />
                   </CarouselItem>
                 ))}
               </CarouselContent>

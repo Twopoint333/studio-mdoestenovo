@@ -52,7 +52,7 @@ export const Testimonials = () => {
                     <div className="flex justify-center mb-4">
                       <div className="bg-[#A21C1C] rounded-full p-2 flex items-center justify-center">
                         <Avatar className="h-12 w-12">
-                          <AvatarImage src={testimonial.logoUrl} alt={`${testimonial.business} Logo`} className="object-contain" />
+                          <AvatarImage src={testimonial.logoUrl} alt={`${testimonial.business} Logo`} className="object-contain" loading="lazy" />
                           <AvatarFallback>{testimonial.business[0]}</AvatarFallback>
                         </Avatar>
                       </div>

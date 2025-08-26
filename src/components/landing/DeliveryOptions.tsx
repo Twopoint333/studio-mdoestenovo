@@ -41,6 +41,7 @@ export const DeliveryOptions = () => {
               alt="Entregador Mais Delivery" 
               className={`w-full h-auto rounded-lg shadow-lg transition-all duration-800 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
               data-ai-hint="delivery person"
+              loading="lazy"
             />
           </div>
           
